@@ -1,0 +1,119 @@
+:root {
+    --bg-container: rgba(255,255,255,0.11);
+    --border-container: rgba(255,255,255,0.22);
+
+    --title-color: #1d8c69; /* MUDAR DEPOIS */
+
+    --white: #f9f9f9;
+    --black: #010101;
+
+    --box-shadow: rgba(0,0,0,0.22);
+
+    --hover-options: #d5d5d5;
+    --hover-options-start: #d64c63;
+    --hover-options-exit: rgba(255,255,255,0.19);
+
+    --bg-dificuty: #1F2C41;
+
+    --option-easy: #106f51;
+    --option-medium: #fbc531;
+    --option-hard: #741212;
+}
+
+.quiz-container {
+    background: var(--bg-container);
+    border: 1px solid var(--border-container);
+    backdrop-filter: blur(15px);
+    border-radius: 1.5rem;
+    min-width: 300px;
+    width: 400px;
+    padding: 1.5rem;
+    margin: .5rem;
+}
+
+.name-quiz {
+    color: var(--title-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 5px 5px 15px rgba(0,0,0,5);
+}
+
+.options {
+    background: var(--white);
+    color: var(--black);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-width: 200px;
+    width: 300px;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    box-shadow: 1px 3px 3px var(--box-shadow);
+    transition: background 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.start {
+    background: #e94560;
+    color: var(--white);
+}
+
+.exit {
+    background-color: var(--bg-container);
+    border: 3px solid var(--border-container);
+    color: var(--white);
+}
+
+.options:hover {
+    background: var(--hover-options);
+    transform: translateY(-2px);
+}
+
+.start:hover {
+    background: var(--hover-options-start);
+}
+
+.exit:hover {
+    background: var(--hover-options-exit);
+}
+
+.container-dificuty {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-dificuty);
+    border-radius: 2rem;
+    padding: .5rem;
+    width: 250px;
+}
+
+.container-dificuty label {
+    color: var(--white);
+    flex: 1;
+    text-align: center;
+    padding: .4rem 0;
+    font-size: .9rem;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+}
+
+.container-dificuty input[type="radio"] { /* remover bolinha do input */
+    display: none;
+}
+
+/* estados dos inputs */
+#easy:checked + label {
+    background: var(--option-easy);
+    color: var(--white);
+}
+
+#medium:checked + label {
+    background: var(--option-medium);
+    color: var(--black);
+}
+
+#hard:checked + label {
+    background: var(--option-hard);
+    color: var(--white);
+}
